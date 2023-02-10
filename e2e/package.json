@@ -2,6 +2,9 @@
   "name": "e2e",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "cucumber": "cucumber-js src/features/**/*.feature --require-module ts-node/register --require src/stepDefinitions/**/**/*.ts"
+  },
   "author": "",
   "license": "ISC",
   "description": "",
