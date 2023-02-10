@@ -27,8 +27,8 @@ Scenario: a user can view only active todos
     When I view the Active list
     Then only Active todo items are shown
 
-# Scenario: a user can view complete todos
-#     Given I have created a todo item "apply for Reach loan"
-#     And I have marked the todo item "apply for Reach loan" as complete
-#     When I click “Clear Completed”
-#     Then the todo item "apply for Reach loan" is removed from my todo list 
+Scenario: a user can view complete todos
+    Given I have created a todo item "apply for Reach loan"
+    And I have marked the todo item "apply for Reach loan" as complete
+    When I click “Clear Completed”
+    Then the todo item "apply for Reach loan" is removed from my todo list 

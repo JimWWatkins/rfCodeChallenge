@@ -44,3 +44,11 @@ When(
         activeList.click();
     }
 )
+
+When(
+    /^I click “Clear Completed”$/,
+    async function () {
+        const clearCompleted = await global.myDriver.findElement(By.className("clear-completed"));
+        clearCompleted.click();
+    }
+)
