@@ -15,3 +15,11 @@ Given(
         const todoTextField = await global.myDriver.findElement(By.xpath("/html/body/section/div/header/input")).sendKeys(todoName, Key.ENTER);
     }
 )
+
+Given(
+    /^I have marked the todo item "([^"]*)" as complete$/,
+    async function (todoName:string) {
+        const todoMarkComplete = await global.myDriver.findElement(By.xpath(`//*[contains(text(),'${todoName}')]/preceding-sibling::input`));
+        todoMarkComplete.click();
+    }
+)

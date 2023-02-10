@@ -36,3 +36,11 @@ When(
         todoMarkComplete.click();
     }
 )
+
+When(
+    /^I view the Active list$/,
+    async function () {
+        const activeList = await global.myDriver.findElement(By.xpath(`//a[contains(text(),'Active')]`));
+        activeList.click();
+    }
+)

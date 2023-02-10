@@ -58,3 +58,18 @@ Then(
         expect(className === 'completed').to.be.true;
     }
 )
+
+Then(
+    /^only Active todo items are shown$/,
+    async function () {
+        const todos = await global.myDriver.findElements(By.xpath('//*/li/div'));
+        let completedShown = false;
+        for(const t in todos){
+            if(todos[t].getAttribute("class") === 'completed'){
+                completedShown = true;
+            } 
+            return completedShown;
+        }
+        expect(completedShown).to.be.false;
+    }
+)

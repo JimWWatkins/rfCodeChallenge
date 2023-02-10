@@ -21,11 +21,11 @@ Scenario: a user can mark a todo item as completed
     Then the todo item "apply for Reach loan" is marked with a green check mark
     And the todo item "apply for Reach loan" is crossed off my todo list with a Strikethrough
 
-# Scenario: a user can view only active todos
-#     Given I have created a todo item "apply for Reach loan"
-#     And I have marked the todo item "apply for Reach loan" as complete
-#     When I view the Active list
-#     Then only Active todo items are shown
+Scenario: a user can view only active todos
+    Given I have created a todo item "apply for Reach loan"
+    And I have marked the todo item "apply for Reach loan" as complete
+    When I view the Active list
+    Then only Active todo items are shown
 
 # Scenario: a user can view complete todos
 #     Given I have created a todo item "apply for Reach loan"
