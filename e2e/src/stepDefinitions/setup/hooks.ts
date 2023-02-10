@@ -1,5 +1,6 @@
 import { Before, After } from "@cucumber/cucumber"
 import { Builder } from 'selenium-webdriver'
+import { Options } from 'selenium-webdriver/chrome'
 import * as fs from "fs"
     
 Before(
