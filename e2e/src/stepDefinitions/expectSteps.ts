@@ -10,3 +10,18 @@ Then(
         expect(await lastTodo).to.equal(todoName);
     }
 )
+
+Then(
+    /^the todo item gets updated with the new changes "([^"]*)"$/,
+    async function (todoName:string) {
+        const todos = await global.myDriver.findElements(By.xpath('//*/li/div'));
+        let todoEditedIsPresent;
+        for(const t in todos){
+            if(todos[t].getText() === todoName){
+                todoEditedIsPresent = true;
+            }
+            return todoEditedIsPresent;
+        }
+        expect(todoEditedIsPresent).to.be.true;
+    }
+)

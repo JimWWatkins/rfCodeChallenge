@@ -5,10 +5,10 @@ Scenario: a user can create a todo item
     When I create a new todo item "apply for Reach loan"
     Then the todo "apply for Reach loan" appears last on my todo list
 
-# Scenario: a user can edit a todo item
-#     Given I have created a todo item "apply for Reach loan"
-#     When I edit the todo item "apply for Reach loan" to "rob a bank"
-#     Then the todo item gets updated with the new changes "rob a bank"
+Scenario: a user can edit a todo item
+    Given I have created a todo item "apply for Reach loan"
+    When I edit the todo item "apply for Reach loan" to "rob a bank"
+    Then the todo item gets updated with the new changes "rob a bank"
 
 # Scenario: a user can delete a todo item
 #     Given I have created a todo item "apply for Reach loan"
