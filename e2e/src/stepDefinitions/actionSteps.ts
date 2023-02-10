@@ -17,3 +17,14 @@ When(
         await global.myDriver.findElement(By.className("edit")).sendKeys(todoNameEdited, Key.ENTER);
     }
 )
+
+When(
+    /^I delete the todo item "([^"]*)" using the red X$/,
+    async function (todoName:string) {
+        const todo = await global.myDriver.findElement(By.xpath(`//label[contains(text(),'${todoName}')]`));
+        const actions = global.myDriver.actions()
+        actions.move({x: 0, y: 0, origin: todo}).perform();
+        const todoDestory = await global.myDriver.findElement(By.xpath(`//label[contains(text(),'${todoName}')]/following-sibling::button`));
+        todoDestory.click();
+    }
+)

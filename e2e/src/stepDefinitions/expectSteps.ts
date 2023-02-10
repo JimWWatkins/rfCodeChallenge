@@ -25,3 +25,18 @@ Then(
         expect(todoEditedIsPresent).to.be.true;
     }
 )
+
+Then(
+    /^the todo item "([^"]*)" is removed from my todo list$/,
+    async function (todoName:string) {
+        const todos = await global.myDriver.findElements(By.xpath('//*/li/div'));
+        let todoIsPresent = false;
+        for(const t in todos){
+            if(todos[t].getText() === todoName){
+                todoIsPresent = true;
+            } 
+            return todoIsPresent;
+        }
+        expect(todoIsPresent).to.be.false;
+    }
+)

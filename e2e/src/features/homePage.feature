@@ -10,10 +10,10 @@ Scenario: a user can edit a todo item
     When I edit the todo item "apply for Reach loan" to "rob a bank"
     Then the todo item gets updated with the new changes "rob a bank"
 
-# Scenario: a user can delete a todo item
-#     Given I have created a todo item "apply for Reach loan"
-#     When I delete the todo item "apply for Reach loan" using the red X
-#     Then the todo item "apply for Reach loan" is removed from my todo list
+Scenario: a user can delete a todo item
+    Given I have created a todo item "apply for Reach loan"
+    When I delete the todo item "apply for Reach loan" using the red X
+    Then the todo item "apply for Reach loan" is removed from my todo list
 
 # Scenario: a user can mark a todo item as completed
 #     Given I have created a todo item "apply for Reach loan"
