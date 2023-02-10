@@ -15,11 +15,11 @@ Scenario: a user can delete a todo item
     When I delete the todo item "apply for Reach loan" using the red X
     Then the todo item "apply for Reach loan" is removed from my todo list
 
-# Scenario: a user can mark a todo item as completed
-#     Given I have created a todo item "apply for Reach loan"
-#     When I mark the todo item "apply for Reach loan" as completed
-#     Then the todo item "apply for Reach loan" is marked with a green check mark
-#     And the todo item "apply for Reach loan" is crossed off my todo list with a Strikethrough
+Scenario: a user can mark a todo item as completed
+    Given I have created a todo item "apply for Reach loan"
+    When I mark the todo item "apply for Reach loan" as completed
+    Then the todo item "apply for Reach loan" is marked with a green check mark
+    And the todo item "apply for Reach loan" is crossed off my todo list with a Strikethrough
 
 # Scenario: a user can view only active todos
 #     Given I have created a todo item "apply for Reach loan"

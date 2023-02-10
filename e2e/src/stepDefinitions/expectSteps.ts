@@ -40,3 +40,21 @@ Then(
         expect(todoIsPresent).to.be.false;
     }
 )
+
+Then(
+    /^the todo item "([^"]*)" is marked with a green check mark$/,
+    async function (todoName:string) {
+        const todo = await global.myDriver.findElement(By.xpath(`//label[contains(text(),'${todoName}')]/../..`));
+        const className = await todo.getAttribute("class");
+        expect(className === 'completed').to.be.true;
+    }
+)
+
+Then(
+    /^the todo item "([^"]*)" is crossed off my todo list with a Strikethrough$/,
+    async function (todoName:string) {
+        const todo = await global.myDriver.findElement(By.xpath(`//label[contains(text(),'${todoName}')]/../..`));
+        const className = await todo.getAttribute("class");
+        expect(className === 'completed').to.be.true;
+    }
+)

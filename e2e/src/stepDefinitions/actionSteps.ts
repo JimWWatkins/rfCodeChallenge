@@ -28,3 +28,11 @@ When(
         todoDestory.click();
     }
 )
+
+When(
+    /^I mark the todo item "([^"]*)" as completed$/,
+    async function (todoName:string) {
+        const todoMarkComplete = await global.myDriver.findElement(By.xpath(`//label[contains(text(),'${todoName}')]/preceding-sibling::input`));
+        todoMarkComplete.click();
+    }
+)
